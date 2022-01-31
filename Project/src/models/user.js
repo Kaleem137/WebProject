@@ -12,8 +12,9 @@ const userSchema = new mongoose.Schema({
 })
 
 
+
 // creating collectins
 
 const User = new mongoose.model("User", userSchema) // creates user collection in the database
 
-module.exports = User // exporting our collection to use in other modules
+module.exports = User // exporting our User collection to use in other modules

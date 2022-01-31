@@ -16,6 +16,7 @@ Asan alfaz ma handle bars code ko reuse krne or payara sa file structure banane 
 
 require("./db/connect") // imporitng connect.js file
 const User = require("./models/user") // imporitng User as our collection in our database to read/write data to
+const admin = require("./models/admin") // imporitng admin as our collection in our database to read/write data to
 
 const PORT = process.env.PORT || 3000 // use port 3000 or whatever is in the environment variable PORT
 
@@ -44,16 +45,16 @@ app.get("/login", (req, res) => { // our login route
 })
 
 app.get("/admin", (req, res) => { // our admin route
-    res.render('addUser')
+    res.render('admin')
 })
 
-app.get("/admin/modify_DB", (req, res) => { // our admin route
+app.get("admin/modify_db", (req, res) => { // our admin route
     res.render('addUser')
 })
 
 //add user in our database(only admin)
 
-app.post("/admin/modify_DB", async (req, res) => {
+app.post("admin/modify_DB", async (req, res) => {
     try {
         
         const addUser = new User({
@@ -63,7 +64,7 @@ app.post("/admin/modify_DB", async (req, res) => {
 
         const userAdded = await addUser.save(function(err,result){ // waits for username and password and then save it to the database
             if (err){
-                console.log(err);
+                console.log(err)
             }
             else{
                 console.log(result)
@@ -77,15 +78,17 @@ app.post("/admin/modify_DB", async (req, res) => {
 
 })
 
+
+// admin login
 app.post("/admin", async (req, res) => {
     try {
-        const userName = req.body.userName
-        const password = req.body.password
+        const adminName = req.body.userName
+        const adminPassword = req.body.password
 
-        const name = await User.findOne({userName: userName})
+        const name = await admin.findOne({adminName: adminName})
 
-        if(name.password === password) {
-            res.status(201).render('dashboard')
+        if(name.adminPassword === adminPassword) {
+            res.status(201).render('addUser')
         } else {
             res.send('Incorrect User Name or Password!')
         }
@@ -95,12 +98,15 @@ app.post("/admin", async (req, res) => {
     }
 })
 
+// user login
 // retrieve data from database (allowing users to login)
 
 app.post("/login", async (req, res) => {
     try {
         const userName = req.body.userName
         const password = req.body.password
+
+        // console.log(req.body.userName)
 
         const name = await User.findOne({userName}) // same as ({userName: userName}) (if both key: value are same we write only key)
 
