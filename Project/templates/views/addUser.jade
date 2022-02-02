@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    |   
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |   
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |   
+    title Admin panel
+    |   
+    link(rel='stylesheet', href='../styles/login.css')
+    |   
+    link(rel='icon', href='images/D logo.svg')
+  body
+    #wrapper
+      div
+        h1 Welcome!
+        |       
+        h2 Department of Computer Software Engineering, MCS
+      |     
+      #loginpanel
+        form(action='/admin/modify_db', method='post')
+          .input.username
+            img#usernamelogo(src='/images/usrnamelogo.svg', alt='')
+            |           
+            input#username(type='text', name='userName', placeholder='Username')
+          |         
+          .input
+            img#passwordlogo(src='/images/passwordlogo.svg', alt='')
+            |           
+            input#password(type='password', name='password', placeholder='Password')
+          |         
+          .input.submit
+            input#submitlogin(type='submit', name='', value='Add User')
+          |         
+          a(href='') Forget Password?
+      |     
+      #designerslogo
+        img(src='/images/Designer logo.svg', alt='')
+        |       
+        h4 &amp;copy 2022 All Rights Reserved
