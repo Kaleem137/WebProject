@@ -12,6 +12,12 @@ html(lang='en')
     link(rel='stylesheet', href='/styles/dashboard.css')
     |   
     link(rel='icon', href='images/D logo.svg')
+    | 
+    script(src='https://code.jquery.com/jquery-3.5.0.js')
+    |     
+    script(src='https://cdn.jsdelivr.net/npm/chart.js')
+    |     
+    script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js')
   body
     #wrapper   
       include ../partials/left_section 
@@ -98,100 +104,6 @@ html(lang='en')
           |         
           .alert
       |     
-      #rightsection
-        #innerrightdiv
-          #profilepic
-            img(src='images/avatar.svg', alt='')
-          |         
-          h2#fullname Sara Malik
-          |         
-          h4#batchname BESE-25
-          |         
-          #calendardiv
-            #month February
-            |           
-            #calendarheader
-              div Mon
-              |             
-              div Tue
-              |             
-              div Wed
-              |             
-              div Thu
-              |             
-              div Fri
-              |             
-              div Sat
-              |             
-              div Sun
-            |           
-            #calendardays
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
-              |             
-              .day
+      include ../partials/right_section
+      script(src='js/calender.js')
+      script(src='js/response.js')

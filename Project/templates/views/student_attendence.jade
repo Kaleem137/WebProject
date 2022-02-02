@@ -1,98 +1,73 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    |     
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    |     
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    |     
-    title Dashboard
-    |     
-    link(rel='stylesheet', href='/styles/dashboard.css')
-    |    
-    link(rel='icon', href='images/D logo.svg')
-    script(src='https://code.jquery.com/jquery-3.5.0.js')
-    script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js')
-    script(src='https://cdn.jsdelivr.net/npm/chart.js')
-  body
-    #wrapper
-      include ../partials/left_section          
-      #middlesection
-        h1 Department of Computer Software Engineering, MCS
-        |             
-        h2 Attendence Chart
-        |             
-        #chartdiv
-          div
-            canvas#myChart
-        |             
-        h1 Courses wise attendence
-        |             
-        #coursessection
-          .course
-            .courseimage
-            |                     
-            .coursename
-              hr
-              |                         
-              span
-                | 5th Sem (Fall 2021) 
-                br
-                |                             SE-210 Software Design and Architecture (BESE-25B)
-          |                 
-          .course
-            .courseimage
-            |                     
-            .coursename
-              hr
-              |                         5th Sem (Fall 2021) 
-              br
-              | CC-344 Web Engineering (BESE-25B)
-          |                 
-          .course
-            .courseimage
-            |                     
-            .coursename
-              hr
-              |                         5th Sem (Fall 2021) 
-              br
-              | CS-330 Operating System (BESE-25B)
-          |                 
-          .course
-            .courseimage
-            |                     
-            .coursename
-              hr
-              |                         
-              span
-                | 5th Sem (Fall 2021) 
-                br
-                |                             SE-210 Software Design and Architecture (BESE-25B)
-          |                 
-          .course
-            .courseimage
-            |                     
-            .coursename
-              hr
-              |                         
-              span
-                | 5th Sem (Fall 2021) 
-                br
-                |                             SE-210 Software Design and Architecture (BESE-25B)
-          |                 
-          .course
-            .courseimage
-            |                     
-            .coursename
-              hr
-              |                         
-              span
-                | 5th Sem (Fall 2021) 
-                br
-                |                             SE-210 Software Design and Architecture (BESE-25B)
-      |         
-      include ../partials/right_section.jade         
-      script(type='text/javascript',src='js/attendence.js')
-      |         
-      script(type='text/javascript',src='js/calender.js')
+h1 Department of Computer Software Engineering, MCS
+|         
+h2 Attendence Chart
+|         
+#chartdiv
+  div
+    canvas#myChart
+|         
+h2 Course-wise Attendence
+|         
+#coursessection
+  .course
+    .courseimage
+    |             
+    .coursename
+      hr
+      |               
+      span
+        | 5th Sem (Fall 2021) 
+        br
+        |                 SE-210 Software Design and Architecture (BESE-25B)
+  |           
+  .course
+    .courseimage
+    |             
+    .coursename
+      hr
+      |               5th Sem (Fall 2021) 
+      br
+      | CC-344 Web Engineering (BESE-25B)
+  |           
+  .course
+    .courseimage
+    |             
+    .coursename
+      hr
+      |               5th Sem (Fall 2021) 
+      br
+      | CS-330 Operating System (BESE-25B)
+  |           
+  .course
+    .courseimage
+    |             
+    .coursename
+      hr
+      |               
+      span
+        | 5th Sem (Fall 2021) 
+        br
+        |                 SE-210 Software Design and Architecture (BESE-25B)
+  |           
+  .course
+    .courseimage
+    |             
+    .coursename
+      hr
+      |               
+      span
+        | 5th Sem (Fall 2021) 
+        br
+        |                 SE-210 Software Design and Architecture (BESE-25B)
+  |           
+  .course
+    .courseimage
+    |             
+    .coursename
+      hr
+      |               
+      span
+        | 5th Sem (Fall 2021) 
+        br
+        |                 SE-210 Software Design and Architecture (BESE-25B)
+script(src='js/attendence.js')

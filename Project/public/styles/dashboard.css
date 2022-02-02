@@ -55,15 +55,15 @@ li {
   border-radius: 0 10px 10px 0;
   cursor: pointer;
 }
-li:nth-child(1) {
-  background-color: #ffd600;
-}
 li:hover {
   background-color: #ffd600;
 }
 li > span {
   margin-right: 10%;
   margin-top: 3%;
+}
+.liactive {
+  background-color: #ffd600;
 }
 h1:nth-child(1) {
   font-size: 1.7em;
@@ -89,7 +89,7 @@ h1 {
 #alertssection {
   display: flex;
   width: 100%;
-  height: 30% !important;
+  height: 30%;
   overflow-x: scroll;
   margin: 0 0 2% 0;
 }
@@ -108,7 +108,7 @@ h1 {
 }
 .course,
 .alert {
-  height: 100% !important;
+  height: 100%;
   border-radius: 25px;
   display: flex !important;
   flex-direction: column;
@@ -125,6 +125,15 @@ h1 {
 #alertssection::-webkit-scrollbar,
 #tablediv::-webkit-scrollbar {
   display: none;
+}
+.studentcourses {
+  flex-wrap: wrap;
+  height: 70% !important;
+  overflow-x: initial !important;
+}
+.studentcourses > .course {
+  margin: 1%;
+  height: 40% !important;
 }
 #innerrightdiv {
   width: 100%;
