@@ -15,7 +15,14 @@ const PORT = process.env.PORT || 3000 // use port 3000 or whatever is in the env
 
 const static_path = path.join(__dirname, "../public") // path to all static files
 const templates_path = path.join(__dirname, "../templates/views") // path to views folder
-const partials_path = path.join(__dirname, "../templates/partials") // path to partials folder
+// const partials_path = path.join(__dirname, "../templates/partials") // path to partials folder
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const oneDay = 1000 * 60 * 60 * 24;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.use(express.json()) // built-in middleware function in Express. It parses incoming requests with JSON payloads
 app.use(express.urlencoded({ extended: false })) // express.urlencoded() is a method inbuilt in express to recognize the incoming Request Object as strings or arrays
@@ -26,12 +33,6 @@ app.use(sessions({
     cookie: { maxAge: oneDay },
     resave: false
 }));
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const oneDay = 1000 * 60 * 60 * 24;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.use(express.static(static_path))
 app.set("view engine", "jade") // tells our app that our default view engine is handle bars
@@ -45,7 +46,7 @@ In other words if some part of the code is same everywhere,
 we can store that code in partials folder and call ir using syntax: {{> fileName }}
 */
 
-var session
+var session // global variable for sessison
 
 app.get("/student_login", (req, res) => { // our login route
     session = req.session
@@ -74,6 +75,13 @@ app.get("/admin_login", (req, res) => { // our admin route
     }
 })
 
+app.get('/logout', (req, res) => {
+    session = req.session
+    session.destroy();
+    res.send('Logged out');
+});
+
+
 // test
 app.get('/admin_dashboard', (req, res) => {
     res.render('admin_dashboard');
@@ -83,11 +91,6 @@ app.get('/student_attendence', (req, res) => {
     res.render('student_attendence');
 });
 
-app.get('/logout', (req, res) => {
-    session = req.session
-    session.destroy();
-    res.send('Logged out');
-});
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // creates admin 1 time

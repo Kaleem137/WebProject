@@ -9,51 +9,15 @@ html(lang='en')
     |     
     title Dashboard
     |     
-    link(rel='stylesheet', href='styles/dashboard.css')
+    link(rel='stylesheet', href='/styles/dashboard.css')
     |    
     link(rel='icon', href='images/D logo.svg')
+    script(src='https://code.jquery.com/jquery-3.5.0.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/chart.js')
   body
     #wrapper
-      #leftsection
-        #designerslogo
-          img(src='images/Designer logo.svg', alt='')
-        |             
-        ul
-          li
-            span
-              img(src='images/home icon.svg', alt='')
-            |  Home
-          |                 
-          li
-            span
-              img(src='images/profile icon.svg', alt='')
-            | Profile
-          |                 
-          li
-            span
-              img(src='images/grade icon.svg', alt='')
-            | Results
-          |                 
-          li
-            span
-              img(src='images/courses icon.svg', alt='')
-            | Courses
-          |                 
-          li
-            span
-              img(src='images/project icon.svg', alt='')
-            | Projects
-          |                 
-          li
-            span
-              img(src='images/invoice icon.svg', alt='')
-            | Invoices
-          |                 
-          li
-            span
-              img(src='images/attendence icon.svg', alt='')
-            | Attendence
-      |         
+      include ../partials/left_section          
       #middlesection
         h1 Department of Computer Software Engineering, MCS
         |             
@@ -128,104 +92,7 @@ html(lang='en')
                 br
                 |                             SE-210 Software Design and Architecture (BESE-25B)
       |         
-      #rightsection
-        #innerrightdiv
-          #profilepic
-            img(src='images/avatar.svg', alt='')
-          |                 
-          h2#fullname Sara Malik
-          |                 
-          h4#batchname BESE-25
-          |                 
-          #calendardiv
-            #month February
-            |                     
-            #calendarheader
-              div Mon
-              |                         
-              div Tue
-              |                         
-              div Wed
-              |                         
-              div Thu
-              |                         
-              div Fri
-              |                         
-              div Sat
-              |                         
-              div Sun
-            |                     
-            #calendardays
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-              |                         
-              .day
-      |         
+      include ../partials/right_section.jade         
       script(type='text/javascript',src='js/attendence.js')
       |         
-      script(type='text/javascript',src='js/attendence.js')
+      script(type='text/javascript',src='js/calender.js')

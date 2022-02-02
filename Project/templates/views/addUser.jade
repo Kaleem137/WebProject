@@ -14,11 +14,12 @@ html(lang='en')
     link(rel='icon', href='images/D logo.svg')
   body
     #wrapper
-      div
-        h1 Welcome!
-        |       
-        h2 Department of Computer Software Engineering, MCS
-      |     
+      //- div
+      //-   h1 Welcome!
+      //-   |       
+      //-   h2 Department of Computer Software Engineering, MCS
+      //- |    
+      include ../partials/header.jade 
       #loginpanel
         form(action='/admin/modify_db', method='post')
           .input.username

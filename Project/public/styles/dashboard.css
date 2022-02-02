@@ -29,6 +29,8 @@ body {
 }
 #rightsection {
   grid-column-start: 3;
+  background: #ffffff;
+  padding: 5% 0;
 }
 #designerslogo {
   width: 90%;
@@ -45,9 +47,9 @@ li {
   align-items: center;
   padding-left: 20%;
   width: 100%;
-  height: 2.5em;
+  height: 30px;
   background-color: #afafaf82;
-  margin-top: 6%;
+  margin-top: 5%;
   list-style-type: none;
   font-size: 120%;
   border-radius: 0 10px 10px 0;
@@ -57,7 +59,7 @@ li:nth-child(1) {
   background-color: #ffd600;
 }
 li:hover {
-  background-color: #ffd500a4;
+  background-color: #ffd600;
 }
 li > span {
   margin-right: 10%;
@@ -71,7 +73,7 @@ h1:nth-child(1) {
 }
 h2 {
   font-size: 1.3em;
-  font-weight: 500;
+  font-weight: 600;
 }
 h4 {
   font-size: 1em;
@@ -87,7 +89,7 @@ h1 {
 #alertssection {
   display: flex;
   width: 100%;
-  height: 30%;
+  height: 30% !important;
   overflow-x: scroll;
   margin: 0 0 2% 0;
 }
@@ -106,6 +108,270 @@ h1 {
 }
 .course,
 .alert {
+  height: 100% !important;
+  border-radius: 25px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.alert {
+  width: 48% !important;
+  background-color: #c4c4c4;
+  margin: 0 1%;
+}
+#coursessection::-webkit-scrollbar,
+#alertssection::-webkit-scrollbar,
+#tablediv::-webkit-scrollbar {
+  display: none;
+}
+#innerrightdiv {
+  width: 100%;
+  height: 100%;
+  border-left: solid #afafaf80 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 5%;
+}
+#profilepic {
+  width: 60%;
+}
+#profilepic > img {
+  width: 100%;
+}
+#calendardiv {
+  width: 100%;
+  height: 40%;
+  text-align: center;
+  margin: 5% 0;
+}
+#calendarheader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 85%;
+}
+#calendardays {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.day {
+  width: 14%;
+  height: 20%;
+  flex-shrink: 0;
+  margin: 5% 0;
+  padding: 2%;
+}
+#month {
+  font-weight: 600;
+  margin: 5%;
+}
+#calendarheader {
+  font-weight: 500;
+}
+.todaydate {
+  background-color: #1294f2;
+  border-radius: 100px;
+}
+/* 
+Home Section End */
+
+/* profile image top section */
+.profile-image {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #7cd6ca80;
+  padding: 2%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.profile-image img {
+  margin-left: 10%;
+  width: 25%;
+  height: 25%;
+}
+.profile-text {
+  padding: 5%;
+}
+.profile-text h1,
+h3 {
+  padding: 1px;
+}
+
+/* profile image bottom section */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5%;
+  border: 1px solid grey;
+  border-top: none;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+form input,
+label {
+  margin: 1%;
+  display: block;
+  background-color: #fff;
+}
+form div {
+  width: 50%;
+}
+form div input {
+  border: none;
+  border-bottom: 1px solid grey;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  outline: none;
+  width: 70%;
+  font-size: 16px;
+}
+#middlesection h3 {
+  font-weight: 500;
+  font-size: 1em;
+}
+label {
+  font-weight: 600;
+}
+
+/* Attendance */
+
+#chartdiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#chartdiv > div {
+  width: 80%;
+  height: 100%;
+}
+
+/* Attendence table section */
+#tablediv {
+  width: 100%;
+  margin: 5% 0;
+  height: 85%;
+  overflow-y: scroll;
+}
+#tablediv h3 {
+  font-size: 1.4em;
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  /* width: 800px; */
+}
+table caption {
+  font-size: 1.2em;
+  margin: 0.8em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* attendence */
+
+input[type="date"] {
+  outline: none;
+  border: none;
+  text-align: center;
+  padding-left: 17%;
+  background-color: #f8f8f8;
+}
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Attendence details end */
+
+/* Results Section */
+#resultheader {
+  margin-top: 5%;
+}
+#resultsection {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  margin: 0 0 2% 0;
+  flex-wrap: wrap;
+  margin: 2% 0 2% 0;
+}
+.result {
+  width: 31%;
+  background-color: #e8f5f9;
+  margin: 1% 1%;
   height: 100%;
   border-radius: 25px;
   display: flex;
@@ -114,12 +380,7 @@ h1 {
   flex-shrink: 0;
   cursor: pointer;
 }
-.alert {
-  width: 48%;
-  background-color: #c4c4c4;
-  margin: 0 1%;
-}
-#coursessection::-webkit-scrollbar,
-#alertssection::-webkit-scrollbar {
-  display: none;
+.resultname {
+  font-size: 0.9em;
+  padding: 3% 5%;
 }
