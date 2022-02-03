@@ -1,0 +1,97 @@
+h1 Department of Computer Software Engineering, MCS
+|         
+#tablediv
+  h1#resulttable Results (#{sujectDetails.courseId})
+  |           
+  table
+    thead
+      tr
+        th.assessment(scope='col') Assessment
+        |                 
+        th.max-marks(scope='col') Max Marks
+        |                 
+        th.obtained-marks(scope='col') Obtained Marks
+        |                 
+        th.percentage(scope='col') Percentage
+    |             
+    tbody
+      tr
+        td.assessment Assignment-1
+        |                 
+        td.max-marks 9
+        |                 
+        td.obtained-marks #{sujectDetails.Assignment1}
+        |                 
+        td.percentage #{(sujectDetails.Assignment1)*100/10}%
+      |               
+      tr
+        td.assessment(scope='row') Assignment-2
+        |                 
+        td.max-marks 10
+        |                 
+        td.obtained-marks #{sujectDetails.Assignment2}
+        |                 
+        td.percentage #{(sujectDetails.Assignment2)*100/10}%
+      |               
+      tr
+        td.assessment(scope='row') Assignment-3
+        |                 
+        td.max-marks 10
+        |                 
+        td.obtained-marks #{sujectDetails.Assignment3}
+        |                 
+        td.percentage #{(sujectDetails.Assignment3)*100/10}%
+      |               
+      tr
+        td.assessment(scope='row') Quiz-1
+        |                 
+        td.max-marks 10
+        |                 
+        td.obtained-marks #{sujectDetails.Quiz1}
+        |                 
+        td.percentage #{(sujectDetails.Quiz1)*100/10}%
+      |               
+      tr
+        td.assessment(scope='row') Quiz-2
+        |                 
+        td.max-marks 10
+        |                 
+        td.obtained-marks #{sujectDetails.Quiz2}
+        |                 
+        td.percentage #{(sujectDetails.Quiz2)*100/10}%
+      |               
+      tr
+        td.assessment(scope='row') Quiz-3
+        |                 
+        td.max-marks 10
+        |                 
+        td.obtained-marks #{sujectDetails.Quiz3}
+        |                 
+        td.percentage #{(sujectDetails.Quiz3)*100/10}%
+      |               
+      tr
+        td.assessment(scope='row') OHT-1
+        |                 
+        td.max-marks 15
+        |                 
+        td.obtained-marks #{sujectDetails.OHT1}
+        |                 
+        td.percentage #{(sujectDetails.OHT1)*100/15}%
+      |               
+      tr
+        td.assessment(scope='row') OHT-2
+        |                 
+        td.max-marks 15
+        |                 
+        td.obtained-marks #{sujectDetails.OHT2}
+        |                 
+        td.percentage #{(sujectDetails.OHT2)*100/15}%
+      |               
+      tr
+        td.assessment(scope='row') Final
+        |                 
+        td.max-marks 50
+        |                 
+        td.obtained-marks #{sujectDetails.Final}
+        |                 
+        td.percentage #{(sujectDetails.Final)*100/50}%

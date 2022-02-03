@@ -10,7 +10,7 @@ const student = require("./models/student"); // imporitng student as our collect
 const admin = require("./models/admin"); // imporitng admin as our collection in our database to read/write data to
 const faculty = require("./models/faculty"); // imporitng faculty as our collection in our database to read/write data to
 const profile = require("./models/profile"); // imporitng profile as our collection in our database to read/write data to
-const subject = require("./models/SDA"); // imporitng subject as our collection in our database to read/write data to
+const subject = require("./models/subject"); // imporitng subject as our collection in our database to read/write data to
 
 const PORT = process.env.PORT || 3000; // use port 3000 or whatever is in the environment variable PORT
 
@@ -102,16 +102,9 @@ app.post("/profile", async (req, res) => {
   }
 });
 app.post("/results", async (req, res) => {
-  try {
-    session = req.session;
-    const findSubject = await profile.findOne({ userId: session.userid });
-    
-    if (session.type == "student" && findSubject.userId === session.userid) {
-      res.render("student_results",{sujectDetails : findSubject});
-    }
-  } catch (err) {
-    res.status(400).send(err)
-  }
+    // if (session.type == "student") {
+      res.render("student_results");
+    // }
 });
 
 app.post("/courses", (req, res) => {
@@ -119,12 +112,36 @@ app.post("/courses", (req, res) => {
     res.render("student_courses");
   }
 });
+
 app.post("/attendence", (req, res) => {
   if (session.type == "student") {
     // console.log("Hre");
     res.render("student_attendence");
   }
 });
+
+app.post("/results/details",async (req, res) => {
+  try {
+    courseId = req.query.courseId
+    // console.log(courseId)
+    session = req.session;
+    const findSubject = await subject.findOne({ userId: session.userid, courseId });
+
+    if (session.type == "student" && findSubject.userId === session.userid) {
+      res.render("student_results_details",{sujectDetails : findSubject});
+    }
+  } catch (err) {
+    res.status(400).send(err)
+  }
+  
+});
+app.post("/attendence/details",  (req, res) => {
+  if (session.type == "student") {
+    // console.log("/results/details");
+    res.render("student_attendence_details");
+  }
+});
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // creates admin 1 time

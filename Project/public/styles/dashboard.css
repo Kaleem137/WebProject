@@ -377,8 +377,10 @@ input[type="checkbox"] {
   flex-wrap: wrap;
   margin: 2% 0 2% 0;
 }
-.result {
+a {
   width: 31%;
+  text-decoration: none;
+  color: inherit;
   background-color: #e8f5f9;
   margin: 1% 1%;
   height: 100%;
@@ -389,7 +391,16 @@ input[type="checkbox"] {
   flex-shrink: 0;
   cursor: pointer;
 }
+
+.result {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
 .resultname {
+  margin: auto 0 0 0;
   font-size: 0.9em;
   padding: 3% 5%;
 }

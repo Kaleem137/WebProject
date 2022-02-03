@@ -5,6 +5,10 @@ const subjectSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    courseId : {
+        type: String,
+        required: true
+    },
     Quiz1 : {
         type: String,
         required: true
