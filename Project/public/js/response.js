@@ -24,14 +24,6 @@ $("#leftsection  ul li:nth-child(5)").on("click", function () {
   });
 });
 
-// $("#resultsection .result").on("click", function () {
-//   console.log($(".resultname").text())
-//   $.post("/results/details", function (data) {
-//     console.log("ajax/results/details");
-//     $("#middlesection").html(data);
-//   });
-// });
-
 $("#resultsection a").on("click", function (e) {
   e.preventDefault(); // cancel the link itself
     $.post(this.href,function(data) {
@@ -39,8 +31,6 @@ $("#resultsection a").on("click", function (e) {
     $("#middlesection").html(data);
   });
 });
-
-
 $(".coursewiseattendence .course").on("click", function () {
   $.post("/attendence/details", function (data) {
     console.log("ajax/attendence/details");
